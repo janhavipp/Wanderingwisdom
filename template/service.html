@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block body %}
+
+{% from "_navbar.html" import navbar %}
+
+    <!-- Navbar Start -->
+    {{ navbar() }}
+    <!-- Navbar End -->
+
+    <form action="/dashboard" method="POST" class="form-inline">
+        <div class="form-group">
+          <label for="source">From:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="source"
+            id="source"
+            placeholder="Enter your boarding point"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="destination">To:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="destination"
+            id="destination"
+            placeholder="Enter your destination"
+            required
+          />
+        </div>
+        <span class="form-group">
+          <label for="date">Travel Date:</label>
+          <input type="date" class="form-control" name="date" id="date"required/>
+          <label for="return">Return Date:</label>
+          <input type="date" class="form-control" name="return" id="return" required/>
+        </span>
+        
+        
+
+        <button style="margin-top: 5px; padding: 4px;" type="submit" class="btn btn-primary">Submit</button>
+        
+          <div  class="container d-flex justify-content-center align-items-center">
+            <div class="text-center">
+              <img id="loading"  style="display: none;" src="{{url_for('static',filename='loading.gif')}}" alt="Loading..." />
+            </div>
+          </div>
+ 
+      </form>
+
+{% endblock %}

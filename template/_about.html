@@ -1,0 +1,47 @@
+{% macro about() %}
+<!-- About Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5 align-items-end">
+            <div class="col-lg-6">
+                <div class="row g-2">
+                    <div class="col-6 position-relative wow fadeIn" data-wow-delay="0.7s">
+                        <div class="about-experience bg-secondary rounded">
+                            <h1 class="display-1 mb-0">25</h1>
+                            <small class="fs-5 fw-bold">Years Experience</small>
+                        </div>
+                    </div>
+                    <div class="col-6 wow fadeIn" data-wow-delay="0.1s">
+                        <img class="img-fluid rounded" src="{{ url_for('static', filename='img/service-1.jpg') }}">
+                    </div>
+                    <div class="col-6 wow fadeIn" data-wow-delay="0.3s">
+                        <img class="img-fluid rounded" src="{{ url_for('static', filename='img/service-2.jpg') }}">
+                    </div>
+                    <div class="col-6 wow fadeIn" data-wow-delay="0.5s">
+                        <img class="img-fluid rounded" src="{{ url_for('static', filename='img/service-3.jpg') }}">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                <p class="section-title bg-secondary text-start text-primary pe-3">About Us</p>
+                <h1 class="mb-4">Welcome to Wandering Wisdom, where exploration meets insight!</h1>
+                <p class="mb-4">At Wandering Wisdom, we believe in the transformative power of travel and the wisdom that comes from embracing the unknown. Our platform is a celebration of the journey – a journey that goes beyond the physical landscapes to delve into the richness of experience, culture, and discovery.</p>
+                <div class="row g-5 pt-2 mb-5">
+                    <div class="col-sm-6">
+                        <img class="img-fluid mb-4" src="{{ url_for('static', filename='img/service.png') }}" alt="" width="30%">
+                        <h5 class="mb-3">Our Mission</h5>
+                        <span>Wandering Wisdom is not just a travel itinerary planner; it's a companion for your exploration endeavors. Our mission is to inspire, guide, and empower you to embark on meaningful journeys that go beyond the ordinary. We strive to infuse your travels with a touch of wisdom, encouraging you to wander with curiosity and purpose.</span>
+                    </div>
+                    <div class="col-sm-6">
+                        <img class="img-fluid mb-4" src="{{ url_for('static', filename='img/apart.png') }}" alt="" width="30%">
+                        <h5 class="mb-3">What sets us Apart</h5>
+                        <span>Wandering Wisdom is more than just an algorithm generating itineraries. It's a reflection of our passion for travel, cultural appreciation, and the joy of discovery. Our recommendations are curated with care, incorporating the essence of each destination and the collective wisdom of fellow wanderers.</span>
+                    </div>
+                </div>
+                <a class="btn btn-secondary rounded-pill py-3 px-5" href="">Explore More</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+{% endmacro %}

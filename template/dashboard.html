@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block body %}
+
+{% from "_navbar.html" import navbar %}
+
+<!-- Navbar Start -->
+{{ navbar() }}
+<!-- Navbar End -->
+
+<!-- Main Content -->
+<main>
+  <div class="container" style="height: 100vh; width: 100%;">
+    <h3>Weather Information</h3>
+    <h5><b>Location:</b> {{weather_data['resolvedAddress']}}</h5>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Current Weather Conditions</th>
+          <th>Max Temperature (in °C)</th>
+          <th>Min Temperature (in °C)</th>
+          <th>Precipitation Probability</th>
+          <th>Humidity</th>
+          <th>Weather Alerts</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for weather_data_item in weather_data['days'] %}
+        <tr>
+          <td>{{ weather_data_item['datetime'] }}</td>
+          <td>{{ weather_data_item['conditions'] }}</td>
+          <td>{{ weather_data_item['tempmax'] }}</td>
+          <td>{{ weather_data_item['tempmin'] }}</td>
+          <td>{{ weather_data_item['precipprob'] }}</td>
+          <td>{{ weather_data_item['humidity'] }}</td>
+          <td>{{ weather_data_item['description'] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="container">
+    <!-- Paragraph of plan with markdown syntax -->
+    <h1>Planned Itinerary</h1>
+    <code><h6>
+            **This is a tentative itinerary, so please be flexible, it may have
+            some mistakes.
+          </h6></code>
+
+    <div id="markdown-content">{{ plan }}</div>
+  </div>
+
+  <!-- Hotels at Destination -->
+  <div class="md-4 pd container">
+    <h5>
+      For Hotels & Flight Booking:
+      <a style="text-decoration: none" href="https://www.booking.com" target="_blank">
+        <button type="button" class="btn btn-light">
+          Click Here
+        </button>
+      </a>
+    </h5>
+  </div>
+</main>
+{% endblock %}

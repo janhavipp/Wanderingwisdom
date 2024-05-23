@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 400px;
+            margin-top: 20px;
+        }
+        h2{
+          text-align: center;
+        }
+        button{
+          background: #555;
+            font-size: medium;
+            color: #fff;
+            width: 100%;
+            height: 46px;
+            border-radius: 20px;
+            border: 0;
+            outline: 0;
+            cursor: pointer;
+            transition: background 1s;
+                }
+                .signup p a
+        {
+            color: #162938;
+            text-decoration: none;
+            font-size: .6cm;
+            font-weight: 600;
+        }
+        .signup p a:hover
+        {
+            text-decoration: underline;
+        }
+        .message div{
+            align-items: center;
+        }
+    </style>      
+    
+</head>
+<body>
+    <div class="container">
+        <h2 class="mb-4">Sign Up</h2>
+        <div class="message" >
+            {% for messages in get_flashed_messages() %}
+                {{ messages }}
+            {% endfor %}
+        </div>
+        <form method="post" action="/signup">
+            <div class="form-group">
+                <label for="first_name">First Name:</label>
+                <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter Your First Name" required>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last Name:</label>
+                <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter Your Last Name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password:</label>
+                <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Re-Enter Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+            <div class="signup">
+                <p> Already have an account? <a href="/login" class="link login">Login</a></p>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

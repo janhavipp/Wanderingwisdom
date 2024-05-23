@@ -1,0 +1,33 @@
+{% macro navbar() %}
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5">
+    <a href="/" class="navbar-brand d-flex align-items-center">
+        <h1 class="m-0">Wandering Wisdom</h1>
+    </a>
+    <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <a href="/" class="nav-item nav-link active">Home</a>
+            <a href="/about" class="nav-item nav-link">About</a>
+            <a href="/service" class="nav-item nav-link">Services</a>
+            <a href="/product" class="nav-item nav-link">Tour Packages</a>
+            <a href="/contact" class="nav-item nav-link">Contact</a>
+        </div>
+        <!-- <div class="border-start ps-4 d-none d-lg-block">
+            <button type="button" class="btn btn-sm p-0"><i class="fa fa-search"></i></button>
+        </div> -->
+      {% if session.fname %}
+      <b style="width: max-content; color: #000" class="d-flex py-1 me-3">Welcome, {{ session.fname }}</b
+      >
+      <a href="/logout" class="btn-primary rounded btn px-3 me-2">Logout</a>
+      {% else %}
+        <a href="/login" class="btn btn-secondary rounded-pill py-3 px-5 animated slideInRight">Login</a>
+        <div class="border-start ps-4 d-none d-lg-block"></div>
+        <a href="/signup" class="btn btn-secondary rounded-pill py-3 px-5 animated slideInRight">SignUp</a>
+      {% endif %}
+    </div>
+</nav>
+<!-- Navbar End -->
+{% endmacro %}
